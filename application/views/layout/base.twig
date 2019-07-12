@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "layout/metatag.twig" %}
+    </head>
+    <body class="{{ req.controller }} {{ req.action }}">
+        {% include "layout/menu.twig" %}
+
+        {% block content %}{% endblock %}
+
+        {% include "layout/scripts.twig" %}
+    </body>
+</html>

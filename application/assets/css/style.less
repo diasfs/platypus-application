@@ -1,0 +1,50 @@
+//compress:true
+@import "colors.less";
+
+body {
+    color: @primary;
+    background-color: @bg;
+}
+
+.home.index {
+    h1 {
+        font-weight: 100;
+    }
+}
+
+nav {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        background-color: @primary;
+        li {
+            a {
+                text-decoration: none;
+                display: block;
+                padding: 1em;
+                color: @secondary;
+                position: relative;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-bottom: 2px solid black;
+                    width: 100%;
+                    top: 100%;
+                    left: 0;
+                    transform: scaleX(0);
+                    transition: all 0.25s;
+                }
+                &:hover,
+                &.active {
+                    &::after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+}
